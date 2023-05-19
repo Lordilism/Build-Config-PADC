@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id= "@+id/toolBar"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBarFromMain"
+            android:layout_width = "match_parent"
+            app:title="Welcome"
+            app:titleTextColor="@color/white"
+            android:layout_height = "wrap_content"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id = "@+id/rvClientData"
+        android:layout_below="@id/toolBar"
+        android:layout_centerHorizontal="true"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:padding="12dp"/>
+
+</RelativeLayout>
