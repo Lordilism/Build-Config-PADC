@@ -1,7 +1,5 @@
 package com.example.shared.data.models
 
-import com.example.shared.network.BASE_URL_FOOD_PANDA
-import com.example.shared.network.BASE_URL_GRAB
 import com.example.shared.network.RestaurantAPI
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient
@@ -10,15 +8,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 abstract class BaseModel {
-    protected var mRestaurantAPI: RestaurantAPI? = null
+     var mRestaurantAPI: RestaurantAPI? = null
 
 
-    fun initRetrofitWithBaseUrl(baseUrl:String){
+
+
+    fun initRetrofitWithBaseUrl(baseUrl: String) {
 
         val mOkHttpClient = OkHttpClient.Builder()
-            .connectTimeout(15,TimeUnit.SECONDS)
-            .readTimeout(15,TimeUnit.SECONDS)
-            .writeTimeout(15,TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
+            .readTimeout(15, TimeUnit.SECONDS)
+            .writeTimeout(15, TimeUnit.SECONDS)
             .build()
 
 
@@ -29,25 +29,11 @@ abstract class BaseModel {
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
 
-        mRestaurantAPI  = mRetrofit.create(RestaurantAPI::class.java)
+        mRestaurantAPI = mRetrofit.create(RestaurantAPI::class.java)
 
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

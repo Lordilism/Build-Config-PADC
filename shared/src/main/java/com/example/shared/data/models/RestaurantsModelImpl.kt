@@ -15,8 +15,10 @@ object RestaurantsModelImpl : RestaurantsModel, BaseModel() {
             ?.observeOn(AndroidSchedulers.mainThread())
             ?.subscribe({
                 onSuccess(it.data ?: listOf())
-            },{
-                onFailure(it.localizedMessage?:"No Internet")
+            }, {
+                onFailure(it.localizedMessage ?: "No Internet")
             })
     }
+
+
 }

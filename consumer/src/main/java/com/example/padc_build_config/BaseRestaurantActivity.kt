@@ -5,7 +5,9 @@ import com.example.shared.data.models.RestaurantsModelImpl
 
 class BaseRestaurantActivity : Application() {
     override fun onCreate() {
-        super.onCreate()
+        val config = BuildConfig.ENDPOINT
         RestaurantsModelImpl.initRetrofitWithBaseUrl(BuildConfig.ENDPOINT)
+        super.onCreate()
+
     }
 }

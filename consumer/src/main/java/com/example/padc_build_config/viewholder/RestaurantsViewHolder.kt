@@ -17,7 +17,7 @@ class RestaurantsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
 
         itemView.tvCategory.text = data.category
 
-        itemView.tvPrice.text = data.delivery_price.toString()
+        itemView.tvPrice.text = "${data.delivery_price.toString()} MMK"
         itemView.tvRating.text = data.rating.toString()
 
 
